@@ -1,0 +1,5 @@
+{
+  "name": "Interactive Family Tree",
+  "description": "A responsive web application to visualize and manage your family tree. Add family members, view relationships in a hierarchical format, and explore detailed information for each person.",
+  "requestFramePermissions": []
+}
