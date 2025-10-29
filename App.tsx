@@ -51,9 +51,9 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="font-sans bg-gray-50 h-screen flex flex-col">
+    <div className="font-sans bg-gray-50 min-h-screen flex flex-col">
       <header className="bg-white shadow-md">
-        <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="px-4 py-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <h1 className="text-3xl font-bold text-gray-900">
             Family Tree
           </h1>
@@ -89,20 +89,19 @@ const App: React.FC = () => {
           </div>
         </div>
       </header>
-      <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 w-full flex flex-col flex-grow">
+      <main className="py-6 px-4 sm:px-6 lg:px-8 w-full flex flex-col flex-grow gap-6">
         <UpcomingEvents events={upcomingEvents} />
-        <p className="text-center text-gray-600 my-4">
-          Click on a family member to view their details. Use scroll to zoom and drag to pan.
-        </p>
-        <div
-          className="bg-white rounded-lg shadow-xl p-4 relative flex-grow min-h-0"
-        >
-          <FamilyTree
-            people={people}
-            onPersonClick={handlePersonClick}
-            selectedPersonId={selectedPerson?.id}
-            orientation={orientation}
-          />
+        <div className="flex flex-col h-[80vh]">
+          <div
+            className="bg-white rounded-lg shadow-xl p-4 relative flex-grow min-h-0"
+          >
+            <FamilyTree
+              people={people}
+              onPersonClick={handlePersonClick}
+              selectedPersonId={selectedPerson?.id}
+              orientation={orientation}
+            />
+          </div>
         </div>
       </main>
       {selectedPerson && (
